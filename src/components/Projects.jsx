@@ -1,52 +1,52 @@
-import React from "react";
-import { useAppContext } from "../appContext";
-import { useSelector } from "react-redux";
+import React from 'react'
+import { useAppContext } from '../appContext'
+import { useSelector } from 'react-redux'
 import {
   selectData,
   selectError,
-  selectIsLoading,
-} from "../pages/allProjectsSlice";
-import { Link } from "react-router-dom";
-import { Element } from "react-scroll";
-import styled from "styled-components";
+  selectIsLoading
+} from '../pages/allProjectsSlice'
+import { Link } from 'react-router-dom'
+import { Element } from 'react-scroll'
+import styled from 'styled-components'
 // Data
-import { filteredProjects } from "../data";
+import { filteredProjects } from '../data'
 // Icons
-import { FaGithub } from "react-icons/fa";
+import { FaGithub } from 'react-icons/fa'
 // Components
-import { Button, Col, Container, Row } from "react-bootstrap";
-import { Title, Loading } from "./globalStyledComponents";
-import StyledCard from "./StyledCard";
+import { Button, Col, Container, Row } from 'react-bootstrap'
+import { Title, Loading } from './globalStyledComponents'
+import StyledCard from './StyledCard'
 
-const StyledSection = styled.section``;
+const StyledSection = styled.section``
 
 export default function Projects() {
-  const [mainProjects, setMainProjects] = React.useState([]);
-  const { theme } = useAppContext();
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
-  const data = useSelector(selectData);
+  const [mainProjects, setMainProjects] = React.useState([])
+  const { theme } = useAppContext()
+  const isLoading = useSelector(selectIsLoading)
+  const error = useSelector(selectError)
+  const data = useSelector(selectData)
 
   React.useEffect(
     function () {
-      const tempData = [];
-      data.forEach((el, i) => (tempData[i] = Object.create(el)));
+      const tempData = []
+      data.forEach((el, i) => (tempData[i] = Object.create(el)))
       if (data.length !== 0 && filteredProjects.length !== 0) {
         const tempArray = tempData.filter((obj) =>
           filteredProjects.includes(obj.name)
-        );
+        )
         tempArray.length !== 0
           ? setMainProjects([...tempArray])
-          : setMainProjects([...tempData.slice(0, 3)]);
+          : setMainProjects([...tempData.slice(0, 3)])
       } else {
-        setMainProjects([...tempData.slice(0, 3)]);
+        setMainProjects([...tempData.slice(0, 3)])
       }
     },
     [data]
-  );
+  )
 
   return (
-    <Element name={"Projects"} id="projects">
+    <Element name={'Projects'} id="projects">
       <StyledSection className="section">
         <Container>
           <Container className="d-flex">
@@ -75,6 +75,7 @@ export default function Projects() {
                   name,
                   description,
                   html_url,
+                  homepage
                 }) {
                   return (
                     <Col key={id}>
@@ -84,9 +85,10 @@ export default function Projects() {
                         name={name}
                         description={description}
                         url={html_url}
+                        homepage={homepage}
                       />
                     </Col>
-                  );
+                  )
                 })}
               </Row>
               {data.length > 3 && (
@@ -95,7 +97,7 @@ export default function Projects() {
                     <Button
                       size="lg"
                       variant={
-                        theme === "light" ? "outline-dark" : "outline-light"
+                        theme === 'light' ? 'outline-dark' : 'outline-light'
                       }
                     >
                       All <FaGithub /> Projects
@@ -108,5 +110,5 @@ export default function Projects() {
         </Container>
       </StyledSection>
     </Element>
-  );
+  )
 }

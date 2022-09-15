@@ -1,12 +1,12 @@
-import styled from "styled-components";
-import { useSelector } from "react-redux";
-import { selectData } from "../pages/homeSlice";
-import { Element } from "react-scroll";
+import styled from 'styled-components'
+import { useSelector } from 'react-redux'
+import { selectData } from '../pages/homeSlice'
+import { Element } from 'react-scroll'
 // Data
-import { moreInfo } from "../data";
+import { moreInfo } from '../data'
 // Components
-import { Col, Container, Row } from "react-bootstrap";
-import { Title } from "./globalStyledComponents";
+import { Col, Container, Row } from 'react-bootstrap'
+import { Title } from './globalStyledComponents'
 
 const StyledAboutMe = styled.section`
   p {
@@ -16,13 +16,13 @@ const StyledAboutMe = styled.section`
     width: 18rem;
     height: 18rem;
   }
-`;
+`
 
 export default function AboutMe() {
-  const { avatar_url, bio } = useSelector(selectData);
+  const { avatar_url, bio } = useSelector(selectData)
 
   return (
-    <Element name={"About"} id="about">
+    <Element name={'About'} id="about">
       <StyledAboutMe className="section">
         <Container>
           <Container className="d-flex">
@@ -44,12 +44,12 @@ export default function AboutMe() {
                 alt="GitHub Avatar"
                 loading="lazy"
                 className="mx-auto rounded-circle"
-                style={{ width: "15rem", height: "15rem" }}
+                style={{ width: '15rem', height: '15rem' }}
               />
             </Col>
           </Row>
         </Container>
       </StyledAboutMe>
     </Element>
-  );
+  )
 }

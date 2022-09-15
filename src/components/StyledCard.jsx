@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 // Icons
-import { FaGithub } from "react-icons/fa";
+import { FaGithub } from 'react-icons/fa'
 // Media
-import GH from "../images/GH.svg";
+import GH from '../images/GH.svg'
 // Components
-import { Card } from "react-bootstrap";
+import { Card } from 'react-bootstrap'
 
 const StyledCardComponent = styled.div`
   .card-footer {
@@ -21,12 +21,19 @@ const StyledCardComponent = styled.div`
       }
     }
   }
-`;
+`
 
-export default function StyledCard({ theme, image, name, description, url }) {
+export default function StyledCard({
+  theme,
+  image,
+  name,
+  description,
+  url,
+  homepage
+}) {
   return (
     <StyledCardComponent>
-      <Card bg={theme === "light" ? "white" : "dark"}>
+      <Card bg={theme === 'light' ? 'white' : 'dark'}>
         <Card.Img
           variant="top"
           src={image ? image : GH}
@@ -38,12 +45,16 @@ export default function StyledCard({ theme, image, name, description, url }) {
           <Card.Text>{description}</Card.Text>
         </Card.Body>
         <Card.Footer className="text-center">
-          <Card.Link href={url}>
-            {"View on GitHub "}
+          <Card.Link href={url} target="_blank">
+            {'View on GitHub '}
             <FaGithub />
+          </Card.Link>
+          <br />
+          <Card.Link href={homepage} target="_blank">
+            {'View deployed site '}
           </Card.Link>
         </Card.Footer>
       </Card>
     </StyledCardComponent>
-  );
+  )
 }

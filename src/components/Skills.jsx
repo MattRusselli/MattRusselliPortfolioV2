@@ -1,16 +1,16 @@
-import { useAppContext } from "../appContext";
-import { Element } from "react-scroll";
+import { useAppContext } from '../appContext'
+import { Element } from 'react-scroll'
 // Data
-import { skillData, resume } from "../data";
+import { skillData, resume } from '../data'
 // Components
-import { Button, Col, Container, Row } from "react-bootstrap";
-import { Title } from "./globalStyledComponents";
+import { Button, Col, Container, Row } from 'react-bootstrap'
+import { Title } from './globalStyledComponents'
 
 export default function Skills() {
-  const { theme } = useAppContext();
+  const { theme } = useAppContext()
 
   return (
-    <Element name={"Skills"} id="skills">
+    <Element name={'Skills'} id="skills">
       <section className="section">
         <Container className="text-center">
           <Title>
@@ -26,14 +26,14 @@ export default function Skills() {
                     <figcaption>{skills.name}</figcaption>
                   </figure>
                 </Col>
-              );
+              )
             })}
           </Row>
           {resume && (
-            <a href={resume}>
+            <a href={resume} rel="noreferrer" target="_blank">
               <Button
                 size="lg"
-                variant={theme === "light" ? "outline-dark" : "outline-light"}
+                variant={theme === 'light' ? 'outline-dark' : 'outline-light'}
                 className="mt-5"
               >
                 R&eacute;sum&eacute;
@@ -43,5 +43,5 @@ export default function Skills() {
         </Container>
       </section>
     </Element>
-  );
+  )
 }
