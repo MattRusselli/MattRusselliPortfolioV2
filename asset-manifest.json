@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MattRusselliPortfolioV2/static/css/main.3953aa88.css",
-    "main.js": "/MattRusselliPortfolioV2/static/js/main.3ea017d6.js",
+    "main.js": "/MattRusselliPortfolioV2/static/js/main.a288dadb.js",
     "static/media/coach.png": "/MattRusselliPortfolioV2/static/media/coach.5606fb79a7ff8ef5f5e3.png",
     "static/media/poke.png": "/MattRusselliPortfolioV2/static/media/poke.d370697ce06231a82220.png",
     "static/media/rps.png": "/MattRusselliPortfolioV2/static/media/rps.8240f5c957919bb505eb.png",
@@ -14,10 +14,10 @@
     "static/media/logo.svg": "/MattRusselliPortfolioV2/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/MattRusselliPortfolioV2/index.html",
     "main.3953aa88.css.map": "/MattRusselliPortfolioV2/static/css/main.3953aa88.css.map",
-    "main.3ea017d6.js.map": "/MattRusselliPortfolioV2/static/js/main.3ea017d6.js.map"
+    "main.a288dadb.js.map": "/MattRusselliPortfolioV2/static/js/main.a288dadb.js.map"
   },
   "entrypoints": [
     "static/css/main.3953aa88.css",
-    "static/js/main.3ea017d6.js"
+    "static/js/main.a288dadb.js"
   ]
 }
