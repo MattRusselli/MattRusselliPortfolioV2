@@ -143,7 +143,7 @@ export const resume =
 */
 export const filteredProjects = [
   'National-Pokedex',
-  'Workout-Tracker-App',
+  'Exercise-Database-App',
   'Vue_Rock_Paper_Scissors',
   'Vanilla_JS_Tic-Tac-Toe',
   'Coachs_Corner_Client'
@@ -156,7 +156,7 @@ export const projectCardImages = [
     image: Poke
   },
   {
-    name: 'Workout-Tracker-App',
+    name: 'Exercise-Database-App',
     image: Workout
   },
   {
